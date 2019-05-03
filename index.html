@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Trivia Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="centrado">
+  <div id="appNameSection" class="visible">
+    <h1>TRIVIA</h1>
+    <h2>¡Bienvenida!</h2>
+    <hr>
+  </div>
+  <div id="getNameSection" class="visible">
+    <p>¿Puedes darme tu nombre?</p>
+    <input type="text" id="txtUserName" /><br><br>
+    <button type="button" id="btnUSerName" onclick="getUserName()">Enviar</button>
+    <hr>
+  </div>
+  <div id="gameSection" class="hidden">
+    <h2 id="userName"> </h2>
+    <div id="chooseTopicSection" class="visible">
+      <p>Para empezar a jugar, elige uno de los siguientes temas:</p>
+      <button type="button" id="btnMusicTopic" onclick="showMusicSection()">Musica</button>
+      <button type="button" id="btnSportTopic" onclick="showSportsSection()">Deporte</button>
+    </div>
+
+    <div id="musicSection" class="hidden">
+      <h3>SECCION MUSICA</h3>
+      <form>
+        <p><strong>1. ¿Cuál de los siguientes cantantes pronunció la frase 'Prefiero que me odien por lo que soy a que
+            me admiren por lo que nunca seré'?</strong></p>
+        <input id="mpr1" name="cantante" type="radio" value="-1" />Freddie Mercury<br>
+        <input id="mpr2" name="cantante" type="radio" value="-1" />John Lennon<br>
+        <input id="mpr3" name="cantante" type="radio" value="-1" />Jim Morrison<br>
+        <input id="mpr4" name="cantante" type="radio" value="1" />Kurt Cobain
+        <p><strong>2. En qué ciudad inglesa nació Noel Gallagher?</strong></p>
+        <input id="mpr5" name="ciudad" type="radio" value="-1" />Liverpool<br>
+        <input id="mpr6" name="ciudad" type="radio" value="-1" />Sao Paulo<br>
+        <input id="mpr7" name="ciudad" type="radio" value="-1" />Manchester<br>
+        <input id="mpr8" name="ciudad" type="radio" value="1" />Londres
+        <p><strong>3. Cuántos álbumes en estudio tiene la banda Red Hot Chili Peppers?</strong></p>
+        <input id="mpr9" name="album" type="radio" value="1" />11<br>
+        <input id="mpr10" name="album" type="radio" value="-1" />15<br>
+        <input id="mpr11" name="album" type="radio" value="-1" />12<br>
+        <input id="mpr12" name="album" type="radio" value="-1" />13<br>
+        <button type="button" id="btnMusicAnswers" onclick="evaluateMusicAnswers()">Enviar Respuestas</button>
+      </form>
+    </div>
+    <div id="sportSection" class="hidden">
+      <h3>SECCION DEPORTE</h3>
+      <form>
+        <p><strong>1. ¿Quien tiene mas balones de oro?</strong></p>
+        <input id="spr13" name="balonOro" type="radio" value="-1" />Paolo Guerrero<br>
+        <input id="spr14" name="balonOro" type="radio" value="-1" />Cristiano Ronaldo<br>
+        <input id="spr15" name="balonOro" type="radio" value="-1" />Claudio Pizarro<br>
+        <input id="spr16" name="balonOro" type="radio" value="1" />Lionel Messi
+        <p><strong>2. ¿Cual es la selección que ha ganado mas copas del mundo?</strong></p>
+        <input id="spr17" name="copasMundo" type="radio" value="-1" />Perú<br>
+        <input id="spr18" name="copasMundo" type="radio" value="1" />Brasil<br>
+        <input id="spr19" name="copasMundo" type="radio" value="-1" />Japón<br>
+        <input id="spr20" name="copasMundo" type="radio" value="-1" />Alemania
+        <p><strong>3. ¿Cual es la distancia que se recorre en una maratón?</strong></p>
+        <input id="spr21" name="maraton" type="radio" value="-1" />20km.<br>
+        <input id="spr22" name="maraton" type="radio" value="1" />40km 195m.<br>
+        <input id="spr23" name="maraton" type="radio" value="-1" />40km 175m.<br>
+        <input id="spr24" name="maraton" type="radio" value="-1" />45km 100m.<br>
+        <button type="button" id="btnSportsAnswers" onclick="evaluateSportsAnswers()">Enviar Respuestas</button>
+      </form>
+    </div>
+    <div id="resultSection" class="hidden">
+      <h3>RESULTADOS</h3>
+      <p id="correctAnswers"></p>
+      <p id="incorrectAnswers"></p><br>
+      <button type="button" id="btnPrincipalMenu" onclick="resetGame()">Menu principal</button>
+      <button type="button" id="btnExit" onclick="close_window()">Salir</button>
+
+    </div>
+  </div>
+  <!--End game section-->
+  <script src="app.js"></script>
+</body>
+
+</html>
